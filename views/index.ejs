@@ -1,0 +1,25 @@
+<%- include ('./partials/header.ejs') %>
+<%- include ('./partials/home-navbar.ejs') %>
+    <div class="container">
+        <br>
+        <div class="jumbotron">
+            <h1 class="display-4">Bem vindo ao blog</h1>
+            <p class="lead">Esse é um simples blog criado para fins de estudo.</p>
+            <hr class="my-4">
+            <p>Aqui estou aprendendo mais sobre como poder aplicar meus conhecimentos em NodeJS, EJS, HTML, JavaScipt, Body-Parser e MySql.</p>
+            <!-- <a class="btn btn-dark btn-lg" href="" role="button">Leia mais</a> -->
+        </div>
+        <% articles.forEach( articles => { %>
+            <div class="card">
+                <div class="card-header">
+                    <h2> <%= articles.title %> </h2>
+                </div>
+                <div class="card-body">
+                    <a href="/<%= articles.slug %>" class="btn btn-dark">Ler Artigo</a>
+                </div>
+            </div>
+            <br>
+        <% }) %>
+        <a style="float:right" href="/articles/page/2">Next</a>
+    </div>
+<%- include ('./partials/footer.ejs') %>
